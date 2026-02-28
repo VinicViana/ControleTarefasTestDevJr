@@ -53,7 +53,7 @@ public class ControleTarefasService : IControleTarefasService
         if (tarefaExistente == null)
             throw new Exception("Tarefa não encontrada");
 
-        tarefaExistente.Atualizar(
+        tarefaExistente.Alterar(
             tarefaDto.Titulo,
             tarefaDto.Descricao,
             (PrioridadeTarefaEnum)tarefaDto.Prioridade,

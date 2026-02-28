@@ -26,7 +26,7 @@ namespace ControleTarefas.Model.Entities
             DataCriacao = DateTime.UtcNow;
         }
 
-        public void Atualizar(string titulo, string descricao, PrioridadeTarefaEnum prioridade, StatusTarefaEnum status)
+        public void Alterar(string titulo, string descricao, PrioridadeTarefaEnum prioridade, StatusTarefaEnum status)
         {
             if (string.IsNullOrWhiteSpace(titulo))
                 throw new ArgumentException("O título é obrigatório.");
