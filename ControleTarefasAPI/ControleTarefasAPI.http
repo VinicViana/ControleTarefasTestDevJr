@@ -1,0 +1,6 @@
+@ControleTarefasAPI_HostAddress = http://localhost:5262
+
+GET {{ControleTarefasAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
