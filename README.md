@@ -1,33 +1,59 @@
 # 📌 Controle de Tarefas
 
-API REST desenvolvida em **.NET 8** para gerenciamento de tarefas, seguindo princípios de separação de camadas (API, Application, Domain e Infrastructure) e boas práticas de arquitetura.
+Sistema completo para gerenciamento de tarefas, desenvolvido com:
 
-O sistema permite:
+- 🔹 **Backend:** .NET 8 (Web API)
+- 🔹 **Frontend:** Angular 18
+- 🔹 **Banco de Dados:** PostgreSQL
+- 🔹 **ORM:** Entity Framework Core 8
 
-- Criar tarefas  
-- Listar todas as tarefas  
-- Buscar tarefa por ID  
-- Atualizar tarefa  
-- Excluir tarefa  
+O sistema permite realizar operações completas de CRUD:
 
-O frontend deverá consumir os mesmos endpoints para realizar as mesmas operações.
+- ✅ Criar tarefas  
+- ✅ Listar todas as tarefas  
+- ✅ Buscar tarefa por ID  
+- ✅ Atualizar tarefa  
+- ✅ Excluir tarefa  
+
+O frontend consome os endpoints da API para executar todas as operações.
 
 ---
 
 # 🏗️ Arquitetura
 
-O projeto foi estruturado em camadas:
+O backend foi estruturado seguindo princípios de separação de responsabilidades e organização em camadas:
 
-- **API** → Controllers e configuração da aplicação  
-- **Application** → Services (regras de aplicação)  
-- **Domain (Model)** → Entidades, DTOs e Enums  
-- **Infrastructure (Data)** → DbContext e Repositories  
+## 🔹 API
+- Controllers
+- Configuração da aplicação
+- Configuração de CORS
 
-Banco de dados: **PostgreSQL**  
-ORM: **Entity Framework Core 8**
+## 🔹 Application
+- Services
+- Regras de negócio
+- Orquestração das operações
 
-# Query utilizada para criacao da tabela de tarefas. 
+## 🔹 Domain (Model)
+- Entidades
+- DTOs
+- Enums (Prioridade e Status)
 
+## 🔹 Infrastructure (Data)
+- DbContext
+- Repositories
+- Configuração do Entity Framework Core
+
+Essa separação facilita manutenção, escalabilidade e testabilidade.
+
+---
+
+# 🗄️ Banco de Dados
+
+Banco utilizado: **PostgreSQL**
+
+## 📄 Script de criação da tabela
+
+```sql
 CREATE TABLE tarefas (
     id SERIAL PRIMARY KEY,
     titulo VARCHAR(200) NOT NULL,
