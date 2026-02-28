@@ -6,8 +6,8 @@ public class TarefaResponseDto
     public int Id { get; private set; }
     public string Titulo { get; private set; }
     public string Descricao { get; private set; }
-    public string Prioridade { get; private set; }
-    public string Status { get; private set; }
+    public int Prioridade { get; private set; }
+    public int Status { get; private set; }
     public DateTime DataCriacao { get; private set; }
 
     public TarefaResponseDto(Tarefa tarefa)
@@ -15,8 +15,8 @@ public class TarefaResponseDto
         Id = tarefa.Id;
         Titulo = tarefa.Titulo;
         Descricao = tarefa.Descricao;
-        Prioridade = tarefa.Prioridade.ToString();
-        Status = tarefa.Status.ToString();
+        Prioridade = (int)tarefa.Prioridade;
+        Status = (int)tarefa.Status;
         DataCriacao = tarefa.DataCriacao;
     }
 }

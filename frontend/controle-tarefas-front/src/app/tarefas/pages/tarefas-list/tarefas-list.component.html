@@ -1,0 +1,24 @@
+<h2>Lista de Tarefas</h2>
+
+<button (click)="novaTarefa()">Nova Tarefa</button>
+
+<table border="1" width="100%">
+  <tr>
+    <th>Título</th>
+    <th>Descrição</th>
+    <th>Prioridade</th>
+    <th>Status</th>
+    <th>Ações</th>
+  </tr>
+
+  <tr *ngFor="let tarefa of tarefas">
+    <td>{{ tarefa.titulo }}</td>
+    <td>{{ tarefa.descricao }}</td>
+    <td>{{ getPrioridadeTexto(tarefa.prioridade) }}</td>
+    <td>{{ getStatusTexto(tarefa.status) }}</td>
+    <td>
+      <button (click)="editar(tarefa.id)">Editar</button>
+      <button (click)="excluir(tarefa.id)">Excluir</button>
+    </td>
+  </tr>
+</table>

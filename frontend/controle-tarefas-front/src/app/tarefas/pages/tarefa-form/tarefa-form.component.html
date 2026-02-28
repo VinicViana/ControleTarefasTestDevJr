@@ -1,0 +1,38 @@
+<h2>{{ editando ? 'Editar Tarefa' : 'Nova Tarefa' }}</h2>
+
+<form [formGroup]="form" (ngSubmit)="salvar()">
+
+  <div>
+    <label>Título:</label>
+    <input formControlName="titulo" />
+  </div>
+
+  <div>
+    <label>Descrição:</label>
+    <input formControlName="descricao" />
+  </div>
+
+  <div>
+    <label>Prioridade:</label>
+    <select formControlName="prioridade">
+      <option [value]="0">Baixa</option>
+      <option [value]="1">Média</option>
+      <option [value]="2">Alta</option>
+    </select>
+  </div>
+
+  <div>
+    <label>Status:</label>
+    <select formControlName="status">
+      <option [value]="0">Pendente</option>
+      <option [value]="1">Em Andamento</option>
+      <option [value]="2">Concluído</option>
+    </select>
+  </div>
+
+  <br>
+
+  <button type="submit">Salvar</button>
+  <button type="button" (click)="voltar()">Voltar</button>
+
+</form>

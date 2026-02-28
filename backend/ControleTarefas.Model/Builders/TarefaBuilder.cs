@@ -39,9 +39,6 @@ namespace ControleTarefas.Model.Builders
             if (string.IsNullOrWhiteSpace(_titulo))
                 throw new ArgumentException("O título é obrigatório.");
 
-            if (_prioridade == 0)
-                throw new ArgumentException("A prioridade deve ser informada.");
-
             return new Tarefa(
                 _titulo,
                 _descricao,
