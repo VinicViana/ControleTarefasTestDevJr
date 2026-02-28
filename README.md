@@ -45,6 +45,10 @@ O backend foi estruturado seguindo princípios de separação de responsabilidad
 
 Essa separação facilita manutenção, escalabilidade e testabilidade.
 
+## 🔹 Para testar
+- Configure a connection string no appsettings.json corretamente (removi a porta e o password por seguranca) 
+- Mude a rota de recebimento no program.cs do backend, pois adicionei uma configuracao de CORS para poder receber requisicoes do meu front local (Mude para a porta que o front carregar em sua maquina)
+
 ---
 
 # 🗄️ Banco de Dados
